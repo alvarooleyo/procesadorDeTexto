@@ -11,6 +11,7 @@ package vista;
  */
 public class vista extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form vista
      */
@@ -28,80 +29,78 @@ public class vista extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jToolBar1 = new javax.swing.JToolBar();
-        comboFuente = new javax.swing.JComboBox<>();
-        comboTamaño = new javax.swing.JComboBox<>();
-        comboTipo = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        area = new javax.swing.JTextArea();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        menuArial = new javax.swing.JMenuItem();
+        menuTimes = new javax.swing.JMenuItem();
+        menuVerdana = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        menuNormal = new javax.swing.JMenuItem();
+        menuNegrita = new javax.swing.JMenuItem();
+        menuCursiva = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToolBar1.setRollover(true);
-
-        comboFuente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        comboFuente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboFuenteActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(comboFuente);
-
-        comboTamaño.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        comboTamaño.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboTamañoActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(comboTamaño);
-
-        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        comboTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboTipoActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(comboTipo);
-
-        jButton1.setText("jButton1");
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton1);
-
-        jButton2.setText("jButton2");
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton2);
-
-        jButton3.setText("jButton3");
-        jButton3.setFocusable(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton3);
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        area.setColumns(20);
+        area.setRows(5);
+        jScrollPane1.setViewportView(area);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        jMenu1.setText("Fuente");
+
+        menuArial.setText("Arial");
+        jMenu1.add(menuArial);
+
+        menuTimes.setText("TimesRoman");
+        jMenu1.add(menuTimes);
+
+        menuVerdana.setText("Verdana");
+        menuVerdana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuVerdanaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuVerdana);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Formato");
+
+        menuNormal.setText("Normal");
+        jMenu2.add(menuNormal);
+
+        menuNegrita.setText("Negrita");
+        jMenu2.add(menuNegrita);
+
+        menuCursiva.setText("Cursiva");
+        menuCursiva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCursivaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuCursiva);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("jMenu3");
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,23 +110,21 @@ public class vista extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void comboTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTipoActionPerformed
+    private void menuVerdanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuVerdanaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboTipoActionPerformed
+    }//GEN-LAST:event_menuVerdanaActionPerformed
 
-    private void comboFuenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboFuenteActionPerformed
+    private void menuCursivaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCursivaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_comboFuenteActionPerformed
-
-    private void comboTamañoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTamañoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboTamañoActionPerformed
+    }//GEN-LAST:event_menuCursivaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,15 +162,18 @@ public class vista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JComboBox<String> comboFuente;
-    public javax.swing.JComboBox<String> comboTamaño;
-    public javax.swing.JComboBox<String> comboTipo;
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton2;
-    public javax.swing.JButton jButton3;
+    public javax.swing.JTextArea area;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    public javax.swing.JToolBar jToolBar1;
+    public javax.swing.JMenuItem menuArial;
+    public javax.swing.JMenuItem menuCursiva;
+    public javax.swing.JMenuItem menuNegrita;
+    public javax.swing.JMenuItem menuNormal;
+    public javax.swing.JMenuItem menuTimes;
+    public javax.swing.JMenuItem menuVerdana;
     // End of variables declaration//GEN-END:variables
 }
